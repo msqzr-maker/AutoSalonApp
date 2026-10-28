@@ -1,0 +1,42 @@
+﻿<Window x:Class="AutoSalonApp.SaleEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Продажа" Height="420" Width="420"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Автомобиль (VIN)"/>
+        <ComboBox x:Name="CmbCar" Grid.Row="1" Margin="0,0,0,8"
+                  DisplayMemberPath="VIN" SelectedValuePath="CarID"/>
+
+        <TextBlock Text="Клиент" Grid.Row="2"/>
+        <ComboBox x:Name="CmbCustomer" Grid.Row="3" Margin="0,0,0,8"
+                  DisplayMemberPath="FullName" SelectedValuePath="CustomerID"/>
+
+        <TextBlock Text="Сотрудник" Grid.Row="4"/>
+        <ComboBox x:Name="CmbEmployee" Grid.Row="5" Margin="0,0,0,8"
+                  DisplayMemberPath="FullName" SelectedValuePath="EmployeeID"/>
+
+        <TextBlock Text="Итоговая цена" Grid.Row="6"/>
+        <TextBox x:Name="TxtPrice" Grid.Row="7" Padding="5" Margin="0,0,0,12"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal">
+            <Button Content="Сохранить" Width="120" Margin="0,0,10,0" Click="Save_Click"/>
+            <Button x:Name="BtnDelete" Content="Удалить" Width="100" Margin="0,0,10,0"
+                    Background="#E74C3C" Foreground="White" Click="Delete_Click"/>
+            <Button Content="Отмена" Width="100" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
